@@ -62,8 +62,9 @@ prepare.py contains code for preparing data for training.
 train.py contains code for training a machine learning model.
 evaluate.py contains code for evaluating the results of a machine learning model.
 
-## Commands
+## Pipleline and Workflow
 
+Follow the commands below to go over the entire DVC pipeline and workflow
 ```
 $ git checkout -b "first_experiment"
 $ dvc init
@@ -96,4 +97,7 @@ $ python src/train.py # train the model and save it in model/model.joblib
 $ dvc add model/model.joblib
 $ git add --all
 $ git commit -m "Trained an SGD classifier"
+$ python src/evaluate.py # evaluate the model and save the result to metrics/accuracy.json
+$ git add --all
+$ git commit -m "Evaluate the SGD model accuracy"
 ```
