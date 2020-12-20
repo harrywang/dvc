@@ -169,3 +169,18 @@ $ git tag -a sgd-pipeline -m "Trained SGD as DVC pipeline."
 $ git push origin --tags
 $ dvc push
 ```
+
+User a different classifier:
+
+```
+$ git checkout -b "random_forest" # then change train.py
+$ dvc status
+$ dvc repro evaluate # this will check each stage before evaluate and update if necessary
+$ git add --all
+$ git commit -m "Train Random Forrest classifier"
+$ dvc commit
+$ git push --set-upstream origin random-forest
+$ git tag -a random-forest -m "Random Forest classifier with 80.99% accuracy."
+$ git push origin --tags
+$ dvc push
+```
