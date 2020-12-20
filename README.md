@@ -89,4 +89,11 @@ Machine learning pipeline part:
 
 ```
 $ python src/prepare.py # create train.csv and test.csv
+$ dvc add data/prepared/train.csv data/prepared/test.csv # add csv to dvc
+$ git add --all # commit dvc files
+$ git commit -m "Created train and test CSV files"
+$ python src/train.py # train the model and save it in model/model.joblib
+$ dvc add model/model.joblib
+$ git add --all
+$ git commit -m "Trained an SGD classifier"
 ```
