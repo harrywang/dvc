@@ -100,4 +100,18 @@ $ git commit -m "Trained an SGD classifier"
 $ python src/evaluate.py # evaluate the model and save the result to metrics/accuracy.json
 $ git add --all
 $ git commit -m "Evaluate the SGD model accuracy"
+$ git push
+$ dvc push
+$ git tag -a sgd-classifier -m "SGDClassifier with accuracy 67.06%"
+$ git push origin --tags
+$ git tag
+```
+
+Creating One Git Branch Per Experiment
+
+```
+$ git checkout -b "sgd-100-iterations" # then change the sgd to 100 iterations
+$ python src/train.py # a new model.joblib file
+$ python src/evaluate.py # a new accuracy.json file
+$ dvc commit # save the changes
 ```
