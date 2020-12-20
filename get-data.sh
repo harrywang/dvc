@@ -7,3 +7,4 @@ mv imagenette2-160/train data/raw/train
 mv imagenette2-160/val data/raw/val
 rm -rf imagenette2-160
 rm imagenette2-160.tgz
+mkdir -p ./data/prepared

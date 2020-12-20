@@ -69,4 +69,24 @@ $ git checkout -b "first_experiment"
 $ dvc init
 $ dvc config core.analytics false
 $ dvc remote add -d remote_storage /Users/harrywang/sandbox/dvc-remote 
+$ dvc add data/raw/train
+$ dvc add data/raw/val
+$ git add --all
+$ git commit -m "First commit with setup and DVC files"
+$ dvc push # push data to remote storage
+$ git push --set-upstream origin first_experiment
+```
+
+Now, you data is cached and backed up in the remote storage
+
+```
+$ rm -rf data/raw/val
+$ dvc checkout data/raw/val.dvc # get data back 
+$ dvc pull # fetch + checkout, get all data 
+```
+
+Machine learning pipeline part:
+
+```
+$ python src/prepare.py # create train.csv and test.csv
 ```
