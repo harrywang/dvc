@@ -62,3 +62,11 @@ prepare.py contains code for preparing data for training.
 train.py contains code for training a machine learning model.
 evaluate.py contains code for evaluating the results of a machine learning model.
 
+## Commands
+
+```
+$ git checkout -b "first_experiment"
+$ dvc init
+$ dvc config core.analytics false
+$ dvc remote add -d remote_storage /Users/harrywang/sandbox/dvc-remote 
+```
